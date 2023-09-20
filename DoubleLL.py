@@ -72,6 +72,10 @@ class DoubleLinkedList:
             print(current.value, end="")
             current = current.next
 
+    def add_from_list(self, list):
+        for value in list:
+            self.add(value)
+
 
 class Node:
     def _init_(self, value):

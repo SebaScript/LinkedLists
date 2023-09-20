@@ -54,8 +54,8 @@ def E1(list):
 		print(suma)
 
 
-listE1 = [1,2,25,2,"*",4,6,"*","*","*","*",9,914124124]
-E1(listE1)
+#listE1 = [1,2,25,2,"*",4,6,"*","*","*","*",9,914124124]
+#E1(listE1)
 
 
 def E2(list):
@@ -93,8 +93,8 @@ def E2(list):
 	ll.traverse()
 
 
-listE2 = ["hola", "comommmmmmmmsvvvvvvvvvvvvvvvv", "estas", "bien", "y", "tututututtttttttttttttt"]
-E2(listE2)
+#listE2 = ["hola", "comommmmmmmmsvvvvvvvvvvvvvvvv", "estas", "bien", "y", "tututututtttttttttttttt"]
+#E2(listE2)
 
 
 def E3(l1, l2):
@@ -118,6 +118,39 @@ def E3(l1, l2):
 		result.add(i)
 	result.traverse()
 
-listE31 = ["h", "o", "l", "a","p"]
-listE32 = [4, 3, 1, 2, 0]
-E3(listE31, listE32)
+#listE31 = ["h", "o", "l", "a","p"]
+#listE32 = [4, 3, 1, 2, 0]
+#E3(listE31, listE32)
+
+def E4(l1, l2):
+	ll1 = SinglyLinkedList()
+	ll1.create_from_list(l1)
+	ll2 = SinglyLinkedList()
+	ll2.create_from_list(l2)
+	nl = SinglyLinkedList()
+	sum = 0
+	mul = 1
+	current1 = ll1.head
+	while current1:
+		sum += current1.value * mul
+		mul *= 10
+		current1 = current1.next
+
+	mul = 1
+	
+	current2 = ll2.head
+	while current2:
+		sum += current2.value * mul
+		mul *= 10
+		current2 = current2.next
+	
+	while sum >= 10:
+		nl.add(sum%10)
+		sum = sum // 10
+	nl.add(sum)
+
+	nl.traverse()
+
+l1 = [1,0,3]
+l2 = [2,1,0]
+E4(l1, l2)
